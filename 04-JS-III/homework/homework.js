@@ -81,15 +81,15 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  var j=0;
   for(var i=0;i<array.length;i++){
     if(array[i]===elemento){
-      return true;
-    }else if(array[i]!=elemento)
-      return false;
+      j++;
     }
   }
-
-
+  return j>0 
+  }
+  
 
 function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
@@ -133,7 +133,18 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  
+  var producto=1;
+  if(arguments.length===0){
+    return 0;
+  }else if(arguments.length===1){
+    return 1;
+  }else{
+    for(var i=0;i<arguments.length;i++){
+      producto*=arguments[i];
+    }
+    return producto;
+  }
+
 }
 
 
@@ -177,16 +188,17 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  var f=0
+  var a=arreglo[0];
+  var b;
+  var j=0;
   for(var i=0;i<arreglo.length;i++){
-    
-  for(var j=1;j<arreglo.length;j++){
-    if(arreglo[i]===arreglo[j]){
-      f++
+    b=arreglo[i];
+    if(a===b){
+      j++
     }
-  }
-    
-  }return f<arreglo.length;
+  
+}
+  return j===arreglo.length;
 } 
 
 
